@@ -1,0 +1,17 @@
+#!/usr/bin/awk -f
+
+BEGIN {
+  print "Dont do that"
+  print sqrt(4)
+
+  # Functions deal with indices into strings is 0-indexing based
+
+  # gensub(regexp, replacement, how [, target])
+  a = "abc def"
+  b = gensub(/(.+) (.+)/, "\\2 \\1", "g", a)
+  print b
+  # outputs def abc
+
+  # the sequence `\0` represents the entire matched text, as does the character `&`
+
+}
